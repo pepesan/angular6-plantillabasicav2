@@ -1,0 +1,15 @@
+<h2 *ngIf="booleana">TodosComponent {{foo}}</h2>
+<h3>A: {{a | currency}}</h3>
+<h4>Añadir tarea</h4>
+{{todo | json}}
+<form (submit)="addTodo()" >
+  <input type="text" [(ngModel)]="todo.text"
+         [ngModelOptions]="{standalone: true}"/>
+</form>
+<h3>Listado de tareas</h3>
+<h2>{{todos | json}}</h2>
+<ul>
+  <li *ngFor="let todo of todos">
+    {{todo.text}}<button (click)="deleteTodo(todo.text)" >Borrar</button>
+  </li>
+</ul>
